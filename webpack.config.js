@@ -23,7 +23,7 @@ const params = {
   },
   entry: {
     app: path.join(__dirname, '/src/index.js'),
-    vendors: Object.keys(pkg.dependencies).filter(name => (name !== 'font-awesome')),
+    // vendors: Object.keys(pkg.dependencies).filter(name => (name !== 'font-awesome')),
   },
 };
 

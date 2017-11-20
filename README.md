@@ -14,14 +14,8 @@ npm install @opuscapita/react-list-items
 * Run `npm run build` to produce minified version of the library
 * Run `npm run dev` to produce development version of the library.
 * Run `npm run test` to run tests
-* Run `npm run docs` to run generate examples
 
 #### Development workflow
-* Run `npm run docs`
-* Open `docs/index.html`
-
-  Or
-
 * Run `npm run hot`
 * Open `http://localhost:5555/`
 
