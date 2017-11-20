@@ -4,5 +4,5 @@
 
 ## next
 
-## 1.0.0
+## 0.0.2
 * Added `ListItems` component
