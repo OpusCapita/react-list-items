@@ -1,4 +1,4 @@
-# react-icons
+# react-list-items
 
 ### [API](./src/list-items/README.md)
 
