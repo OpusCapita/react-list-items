@@ -1,0 +1,34 @@
+@import '../../styles/colors';
+
+.oc-list-items {
+  display: flex;
+  flex-direction: row;
+  
+  .oc-list-items-icon {
+    align-items: center;
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    .fa {
+      cursor: pointer;
+    }
+      
+    .fa[disabled] {
+      color: $oc-color-button-disabled;
+      cursor: auto;
+    }
+  }
+
+  .oc-list-items-element {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    .oc-list-items-string {
+      font-size: 16px;
+    }    
+  }
+}  
