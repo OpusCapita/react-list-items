@@ -1,5 +1,7 @@
 # react-list-items
 
+**ListItems** component renders a custom element or by default a string m/n with the navigation icons 'previous' and 'next' to list items from the list.
+
 ### [API](./src/list-items/README.md)
 
 ### Installation

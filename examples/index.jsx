@@ -5,6 +5,7 @@ import { Router, Route, hashHistory } from 'react-router';
 import ListItemsView from './components/list-items-view/list-items-view.component';
 import './app.component.scss';
 
+// require('font-awesome-sass-loader');
 require('../images/favicon.ico');
 
 render((
