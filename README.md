@@ -32,6 +32,7 @@ npm install @opuscapita/react-list-items
 * Update `CHANGELOG.md` file
 * Commit changes (not `lib`)
 * Make a pull request
+* Merge the pull request and delete the development branch
 
 #### Creating a new release
 * Run `npm version [major|minor|patch]` [Info](https://docs.npmjs.com/cli/version)

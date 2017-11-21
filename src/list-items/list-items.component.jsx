@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ImmutablePropTypes from 'react-immutable-proptypes';
+import 'font-awesome/scss/font-awesome.scss';
 
 import ItemPosition from './item-position/item-position';
 import './list-items.component.scss';
