@@ -1,11 +1,5 @@
-@import '../styles/colors',
-  '../styles/variables',
-  '../styles/bootstrap_v3_custom',
-  '../styles/bootstrap_v3_without_icons',
-  '../styles/icons',
-  './flex',
-  '../styles/bootstrap_v3_overrides',
-  '../styles/_app';
+@import '../styles/main',
+  './flex';
 
 .oc-margin-bottom {
   margin-bottom: 1rem;

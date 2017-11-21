@@ -8,7 +8,6 @@ const merge = require('webpack-merge');
 const libraryName = 'react-list-items';
 const outputJsFile = `${libraryName}.js`;
 
-const pkg = require('./package.json');
 const getBaseConfiguration = require('./webpack/base.config.js');
 
 const params = {
@@ -23,7 +22,6 @@ const params = {
   },
   entry: {
     app: path.join(__dirname, '/src/index.js'),
-    // vendors: Object.keys(pkg.dependencies).filter(name => (name !== 'font-awesome')),
   },
 };
 
@@ -45,53 +43,6 @@ const config = merge(getBaseConfiguration(params), {
             'transform-decorators-legacy',
           ],
         },
-      },
-      {
-        test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url?limit=10000&mimetype=application/font-woff',
-      },
-      {
-        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url?limit=10000&mimetype=application/octet-stream',
-      },
-      {
-        test: /\.svg($|\?)/,
-        loader: 'url-loader',
-        include: /node_modules/,
-      },
-      {
-        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file',
-      },
-      {
-        test: /\.ico$/,
-        loader: 'file?name=[name].[ext]',
-      },
-      {
-        test: /\.svg$/,
-        loaders: ['babel', 'react-svg'],
-        exclude: /node_modules/,
-      },
-      {
-        test: /\.ejs$/,
-        loader: 'ejs-loader?variable=data',
-      },
-      {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader!postcss-loader',
-      },
-      {
-        test: /\.scss$/,
-        include: [path.resolve(__dirname, 'src')],
-        loader: 'style-loader!css-loader!postcss-loader!sass-loader',
-      },
-      {
-        test: /\.(jpg|png)$/,
-        loader: 'url?limit=25000',
-      },
-      {
-        test: /\.json$/,
-        loader: 'json-loader',
       },
     ],
     rules: [
@@ -122,6 +73,24 @@ const config = merge(getBaseConfiguration(params), {
               minimize: true,
             },
           },
+        ],
+      },
+      {
+        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10000,
+              mimetype: 'application/font-woff',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        use: [
+          { loader: 'file-loader' },
         ],
       },
     ],
