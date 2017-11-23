@@ -16,6 +16,7 @@ Prop name | Type | Default | Description
 --- | --- | --- | ---
 disabled | bool | false | A sign of a disabled status of navigation icons
 goToItem | function | required | Callback that is called when navigation to another item should happen
+id | string | required | Instance id
 itemElement | element | null | Custom component to render between navigation icons. By default it renders a string [m/n].
 itemId | [number, string] | required | Initially selected item id
 itemIds | list | required | List of item ids
@@ -46,6 +47,7 @@ export default class ListItemsView extends React.Component {
     return (
       <ListItems
         goToItem={this.goToItem}
+        id="listItemsExample"
         itemId={this.state.currentItem}
         itemIds={this.itemIds}
       />

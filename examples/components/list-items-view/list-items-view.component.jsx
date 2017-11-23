@@ -22,6 +22,7 @@ export default class ListItemsView extends React.Component {
       <div className="oc-list-items-view">
         <ListItems
           goToItem={this.goToItem}
+          id="listItemsExample"
           itemId={this.state.currentItem}
           itemIds={this.itemIds}
         />

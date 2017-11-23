@@ -4,6 +4,9 @@
 
 ## next
 
+## 0.3.0
+* Adding id prop
+
 ## 0.2.0
 * Updated webpack configuration
 
