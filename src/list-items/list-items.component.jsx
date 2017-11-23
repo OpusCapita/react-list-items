@@ -11,6 +11,7 @@ export default class ListItems extends React.PureComponent {
   static propTypes = {
     disabled: PropTypes.bool,
     goToItem: PropTypes.func.isRequired,
+    id: PropTypes.string.isRequired,
     itemElement: PropTypes.element,
     itemId: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
     itemIds: ImmutablePropTypes.list.isRequired,
@@ -38,10 +39,13 @@ export default class ListItems extends React.PureComponent {
   }
 
   render() {
-    const { disabled, itemElement, itemId, itemIds } = this.props;
+    const { disabled, id, itemElement, itemId, itemIds } = this.props;
     this.itemPosition.set(itemIds, itemId);
     return (
-      <div className="oc-list-items">
+      <div
+        className="oc-list-items"
+        id={`oc-list-items-${id}`}
+      >
         <span
           className="oc-list-items-icon"
           onClick={this.goToPreviousItem}

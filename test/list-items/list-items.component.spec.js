@@ -11,6 +11,7 @@ describe('ListItems component', function describe() {
   it('should render and function correctly', function it() {
     const props = {
       goToItem: () => {},
+      id: 'example',
       itemId: 2,
       itemIds: List([1, 2, 3]),
     };
