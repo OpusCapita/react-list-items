@@ -4,8 +4,9 @@
 
 ### [API](./src/list-items/README.md)
 
-### Installation
+### [DEMO](https://opuscapita.github.io/react-list-items)
 
+### Installation
 ```
 npm install @opuscapita/react-list-items
 ```
