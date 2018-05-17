@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-expressions, prefer-arrow-callback, react/jsx-filename-extension */
 import React from 'react';
 import { expect } from 'chai';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import { List } from 'immutable';
 import sinon from 'sinon';
 
@@ -15,9 +15,10 @@ describe('ListItems component', function describe() {
       itemId: 2,
       itemIds: List([1, 2, 3]),
     };
-    const wrapper = mount(<ListItems {...props} />);
-    expect(wrapper.find('.fa fa-chevron-left')).to.exist;
-    expect(wrapper.find('.fa fa-chevron-right')).to.exist;
+    const wrapper = shallow(<ListItems {...props} />);
+    const found = wrapper.find('.oc-list-items-icon');
+    expect(found).to.exist;
+    expect(found.length).to.eql(2);
     let spy;
     spy = sinon.spy(wrapper.instance(), 'goToNextItem');
     wrapper.instance().goToNextItem();
