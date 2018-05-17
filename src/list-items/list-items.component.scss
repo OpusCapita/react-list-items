@@ -9,12 +9,9 @@
     display: flex;
     margin-left: 10px;
     margin-right: 10px;
-
-    .fa {
-      cursor: pointer;
-    }
+    cursor: pointer;
       
-    .fa[disabled] {
+    &[disabled] {
       color: $oc-color-button-disabled;
       cursor: auto;
     }
