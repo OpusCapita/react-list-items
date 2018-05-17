@@ -3,6 +3,8 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## next
+
+## 0.4.0
 * Removed font-awesome library, instead used react-icons
 
 ## 0.3.0
