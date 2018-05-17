@@ -2,7 +2,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ImmutablePropTypes from 'react-immutable-proptypes';
-import 'font-awesome/scss/font-awesome.scss';
+import FaChevronLeft from 'react-icons/lib/fa/chevron-left';
+import FaChevronRight from 'react-icons/lib/fa/chevron-right';
 
 import ItemPosition from './item-position/item-position';
 import './list-items.component.scss';
@@ -49,12 +50,9 @@ export default class ListItems extends React.PureComponent {
         <span
           className="oc-list-items-icon"
           onClick={this.goToPreviousItem}
+          disabled={disabled || this.itemPosition.getPrevious() === 0}
         >
-          <i
-            className="fa fa-chevron-left"
-            aria-hidden="true"
-            disabled={disabled || this.itemPosition.getPrevious() === 0}
-          />
+          <FaChevronLeft />
         </span>
         <span className="oc-list-items-element">
           {itemElement ||
@@ -68,12 +66,9 @@ export default class ListItems extends React.PureComponent {
         <span
           className="oc-list-items-icon"
           onClick={this.goToNextItem}
+          disabled={disabled || this.itemPosition.getNext() === 0}
         >
-          <i
-            className="fa fa-chevron-right"
-            aria-hidden="true"
-            disabled={disabled || this.itemPosition.getNext() === 0}
-          />
+          <FaChevronRight />
         </span>
       </div>
     );

@@ -81,10 +81,8 @@
     "write-file-webpack-plugin": "4.2.0"
   },
   "dependencies": {
-    "font-awesome": "4.7.0",
-    "font-awesome-sass-loader": "2.0.1",
     "immutable": "3.8.2",
-    "prop-types": "15.6.0",
+    "react-icons": "2.2.7",
     "react-immutable-proptypes": "2.1.0"
   },
   "repository": {
