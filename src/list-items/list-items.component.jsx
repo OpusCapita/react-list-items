@@ -15,7 +15,16 @@ export default class ListItems extends React.PureComponent {
     id: PropTypes.string.isRequired,
     itemElement: PropTypes.element,
     itemId: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
-    itemIds: ImmutablePropTypes.list.isRequired,
+    itemIds: PropTypes.oneOfType([
+      ImmutablePropTypes.list,
+      PropTypes.arrayOf(
+        PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.number,
+          PropTypes.shape({}),
+        ]),
+      ),
+    ]).isRequired,
   };
 
   static defaultProps = {
@@ -56,11 +65,9 @@ export default class ListItems extends React.PureComponent {
         </span>
         <span className="oc-list-items-element">
           {itemElement ||
-            (
-              <span className="oc-list-items-string">
-                {this.itemPosition.getString()}
-              </span>
-            )
+          (
+            <span className="oc-list-items-string">{this.itemPosition.getString()}</span>
+          )
           }
         </span>
         <span

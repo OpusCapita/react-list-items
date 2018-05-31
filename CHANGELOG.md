@@ -3,6 +3,7 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## next
+* itemIds doesn't have to be a Immutable list anymore
 
 ## 0.4.0
 * Removed font-awesome library, instead used react-icons
