@@ -3,14 +3,14 @@
 .oc-list-items {
   display: flex;
   flex-direction: row;
-  
+
   .oc-list-items-icon {
     align-items: center;
     display: flex;
     margin-left: 10px;
     margin-right: 10px;
     cursor: pointer;
-      
+
     &[disabled] {
       color: $oc-color-button-disabled;
       cursor: auto;
@@ -26,6 +26,7 @@
 
     .oc-list-items-string {
       font-size: 16px;
-    }    
+      user-select: none;
+    }
   }
 }  

@@ -2,6 +2,7 @@
 
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 ## next
+* Page numbers were made unselectable via CISS.
 
 ## 0.4.1
 * itemIds doesn't have to be a Immutable list anymore
