@@ -5,7 +5,7 @@ import { shallow } from 'enzyme';
 import { List } from 'immutable';
 import sinon from 'sinon';
 
-import { ListItems } from '../../src/list-items/index';
+import ListItems from '../../src/index';
 
 describe('ListItems component', function describe() {
   it('should render and function correctly', function it() {

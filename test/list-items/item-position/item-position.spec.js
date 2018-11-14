@@ -2,7 +2,7 @@
 import { expect } from 'chai';
 import { List } from 'immutable';
 
-import ItemPosition from '../../../src/list-items/item-position/item-position';
+import ItemPosition from '../../../src/item-position/item-position';
 
 describe('ItemPosition class', function describe() {
   it('should function correctly', function it() {
