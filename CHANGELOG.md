@@ -2,7 +2,14 @@
 
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 ## next
-* Page numbers were made unselectable via CISS.
+
+## 1.0.0
+* Upgraded to new component template
+* Upgrade all possible packages
+* Change prev/next links from span to borderless button
+* Change from named export to default export
+* Add `className` prop for `styled-components` compability
+* Add ID attributes to prev/next buttons
 
 ## 0.4.1
 * itemIds doesn't have to be a Immutable list anymore

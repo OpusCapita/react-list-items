@@ -1,3 +1,3 @@
-import '../styles/main.scss';
+import ListItems from './list-items.component';
 
-export * from './list-items/index.js';
+export default ListItems;
