@@ -1,7 +1,7 @@
 {
   "author": "OpusCapita (www.opuscapita.com)",
   "name": "@opuscapita/react-list-items",
-  "version": "0.4.1",
+  "version": "1.0.0",
   "private": false,
   "description": "OpusCapita list-items",
   "main": "lib/umd/react-dropdown.js",
