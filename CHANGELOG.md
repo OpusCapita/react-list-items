@@ -2,6 +2,8 @@
 
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 ## next
+
+## 1.1.0
 * Added possibility to type item
 
 ## 1.0.1
