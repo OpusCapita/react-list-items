@@ -30,7 +30,7 @@ class ItemPosition {
 
   getString = () => this.data.string;
 
-  getSize = () => this.data.size || 0;
+  getSize = () => this.data.size;
 
   getSizeString = () => `/${this.data.size}`;
 
