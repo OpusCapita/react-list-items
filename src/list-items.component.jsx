@@ -66,22 +66,17 @@ export default class ListItems extends React.PureComponent {
 
   handleBlur = () => {
     const { ranking } = this.state;
-    if (ranking) {
-      const index = ranking - 1;
-      const itemId = this.itemPosition.getItem(index);
-      this.goToItem(itemId);
-    } else {
-      const { itemIds } = this.props;
-      const itemId = this.itemPosition.getCurrent();
-      const index = itemIds.findIndex(i => i === itemId);
-      this.setState({ ranking: index + 1 });
-    }
+    if (ranking > 0) return;
+    const { itemIds } = this.props;
+    const itemId = this.itemPosition.getCurrent();
+    const index = itemIds.findIndex(i => i === itemId);
+    this.setState({ ranking: index + 1 });
   }
 
   handleChange = (e) => {
     const { value } = e.target;
     let ranking = value ? Number(value) : value;
-    if (ranking || ranking === 0) {
+    if (ranking !== '') {
       const size = this.itemPosition.getSize();
       ranking = size < ranking ? size : ranking;
       ranking = ranking < 1 ? 1 : ranking;
