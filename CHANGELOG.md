@@ -2,6 +2,7 @@
 
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 ## next
+* Added possibility to type item
 
 ## 1.0.1
 * Fix package.json main file link

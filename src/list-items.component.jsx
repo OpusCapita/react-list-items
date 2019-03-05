@@ -23,6 +23,7 @@ export default class ListItems extends React.PureComponent {
         PropTypes.shape({}),
       ])),
     ]).isRequired,
+    typeable: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -30,22 +31,90 @@ export default class ListItems extends React.PureComponent {
     className: '',
     disabled: false,
     itemElement: null,
+    typeable: false,
   };
 
-  componentWillMount() {
+  constructor(props) {
+    super(props);
     this.itemPosition = new ItemPosition();
+    const { itemId, itemIds } = props;
+    const ranking = itemIds.findIndex(i => i === itemId) + 1;
+
+    this.state = { ranking };
   }
 
   goToNextItem = () => {
     if (!this.props.disabled && this.itemPosition.getNext() !== 0) {
-      this.props.goToItem(this.itemPosition.getNext());
+      const next = this.itemPosition.getNext();
+      this.goToItem(next);
     }
   }
 
   goToPreviousItem = () => {
     if (!this.props.disabled && this.itemPosition.getPrevious() !== 0) {
-      this.props.goToItem(this.itemPosition.getPrevious());
+      const previous = this.itemPosition.getPrevious();
+      this.goToItem(previous);
     }
+  }
+
+  goToItem = (itemId) => {
+    const { itemIds } = this.props;
+    const ranking = itemIds.findIndex(i => i === itemId) + 1;
+    this.props.goToItem(itemId);
+    this.setState({ ranking });
+  }
+
+  handleBlur = () => {
+    const { ranking } = this.state;
+    if (ranking > 0) return;
+    const { itemIds } = this.props;
+    const itemId = this.itemPosition.getCurrent();
+    const index = itemIds.findIndex(i => i === itemId);
+    this.setState({ ranking: index + 1 });
+  }
+
+  handleChange = (e) => {
+    const { value } = e.target;
+    let ranking = value ? Number(value) : value;
+    if (ranking !== '') {
+      const size = this.itemPosition.getSize();
+      ranking = size < ranking ? size : ranking;
+      ranking = ranking < 1 ? 1 : ranking;
+      const index = ranking - 1;
+      const item = this.itemPosition.getItem(index);
+      this.goToItem(item);
+    } else {
+      this.setState({ ranking });
+    }
+  }
+
+  renderItemPosition = () => {
+    const { itemElement, typeable } = this.props;
+    const { ranking } = this.state;
+    const size = this.itemPosition.getSize();
+    return (typeable ?
+      <span className="oc-list-items-element">
+        <input
+          onBlur={this.handleBlur}
+          onChange={this.handleChange}
+          onClick={e => e.target.select()}
+          onFocus={e => e.target.select()}
+          onKeyPress={this.handleKeyPress}
+          min="1"
+          max={size}
+          type="number"
+          value={ranking}
+          style={{ width: `${size.toString().length}em` }}
+        />
+        {this.itemPosition.getSizeString()}
+      </span> :
+      <span className="oc-list-items-element">
+        {itemElement ||
+        (
+          <span className="oc-list-items-string">{this.itemPosition.getString()}</span>
+        )
+        }
+      </span>);
   }
 
   render() {
@@ -53,7 +122,6 @@ export default class ListItems extends React.PureComponent {
       id,
       className,
       disabled,
-      itemElement,
       itemId,
       itemIds,
     } = this.props;
@@ -71,13 +139,7 @@ export default class ListItems extends React.PureComponent {
         >
           <FaChevronLeft />
         </button>
-        <span className="oc-list-items-element">
-          {itemElement ||
-          (
-            <span className="oc-list-items-string">{this.itemPosition.getString()}</span>
-          )
-          }
-        </span>
+        {this.renderItemPosition()}
         <button
           id={`${id}-next-button`}
           className="oc-list-items-icon"

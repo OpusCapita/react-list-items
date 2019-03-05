@@ -23,15 +23,16 @@ Also you need to configure sass loader, since all the styles are in sass format.
 ### API
 
 #### ListItems
-| Prop name   | Type              | Default         | Description                                                           |
-| ------------| ----------------- | --------------- | --------------------------------------------------------------------- |
-| id          | string            | 'oc-list-items' | Unique HTML id attribute                                              |
-| className   | string            | ''              | Custom className                                                      |
-| disabled    | bool              | false           | A sign of a disabled status of navigation icons                       |
-| goToItem    | function          | required        | Callback that is called when navigation to another item should happen |
-| itemElement | element           | null            | Custom component to render between navigation icons. By default it renders a string [m/n] |
-| itemId      | [number, string]  | required        | Initially selected item id                                            |
-| itemIds     | list              | required        | List of item ids                                                      |
+| Prop name   | Type             | Default         | Description                                                                               |
+| ----------- | ---------------- | --------------- | ----------------------------------------------------------------------------------------- |
+| id          | string           | 'oc-list-items' | Unique HTML id attribute                                                                  |
+| className   | string           | ''              | Custom className                                                                          |
+| disabled    | bool             | false           | A sign of a disabled status of navigation icons                                           |
+| goToItem    | function         | required        | Callback that is called when navigation to another item should happen                     |
+| itemElement | element          | null            | Custom component to render between navigation icons. By default it renders a string [m/n] |
+| itemId      | [number, string] | required        | Initially selected item id                                                                |
+| itemIds     | list             | required        | List of item ids                                                                          |
+| typeable    | bool             | false           | If true, current item can be changed by typing.                                           |
 
 ### Code example
 ```jsx
