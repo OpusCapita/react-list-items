@@ -2,6 +2,8 @@
 
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 ## next
+
+## 1.1.1
 * When disabled also input is disabled
 * Fixed itemId prop updating
 
