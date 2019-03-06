@@ -43,6 +43,14 @@ export default class ListItems extends React.PureComponent {
     this.state = { ranking };
   }
 
+  componentDidUpdate = () => {
+    const { itemId } = this.props;
+    const { ranking } = this.state;
+    if (ranking !== '' && itemId !== ranking) {
+      this.goToItem(itemId);
+    }
+  }
+
   goToNextItem = () => {
     if (!this.props.disabled && this.itemPosition.getNext() !== 0) {
       const next = this.itemPosition.getNext();
@@ -89,12 +97,13 @@ export default class ListItems extends React.PureComponent {
   }
 
   renderItemPosition = () => {
-    const { itemElement, typeable } = this.props;
+    const { disabled, itemElement, typeable } = this.props;
     const { ranking } = this.state;
     const size = this.itemPosition.getSize();
     return (typeable ?
       <span className="oc-list-items-element">
         <input
+          disabled={disabled}
           onBlur={this.handleBlur}
           onChange={this.handleChange}
           onClick={e => e.target.select()}
