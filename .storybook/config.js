@@ -8,7 +8,7 @@ import {
 import { withKnobs } from '@storybook/addon-knobs';
 
 setOptions({
-  name: "OpusCapita react-wizard Storybook",
+  name: "OpusCapita react-list-items Storybook",
   addonPanelInRight: true,
   hiearchySeparator: /\//,
   hiearchyRootSeparator: /\|/,
