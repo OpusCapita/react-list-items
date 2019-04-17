@@ -2,6 +2,7 @@
 
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 ## next
+* Add Storybook support
 
 ## 1.1.1
 * When disabled also input is disabled
