@@ -43,9 +43,11 @@ export default class ListItems extends React.PureComponent {
     this.state = { ranking };
   }
 
-  componentDidUpdate = () => {
+  componentDidUpdate = (prevProps) => {
     const { itemId } = this.props;
     const { ranking } = this.state;
+
+    if (prevProps.itemId === itemId) return;
     if (ranking !== '' && itemId !== ranking) {
       this.goToItem(itemId);
     }
