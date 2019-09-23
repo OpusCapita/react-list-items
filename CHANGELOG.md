@@ -1,7 +1,7 @@
 # Changelog
 
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
-## next
+## 1.1.2
 * Added a comparison between the previous and current props to componentDidUpdate
 
 ## 1.1.1
